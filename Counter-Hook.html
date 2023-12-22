@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise13-ClassComp-Hello</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        Text here
+    </div>
+
+    <script type="text/babel">
+        
+          let myroot = ReactDOM.createRoot(document.getElementById('root'));
+          let useState = React.useState;
+
+          let HookComp = () => {
+
+            let [counter, setCounter] = useState(27);
+
+            let counterHandler = () => {
+              counter = counter+1;
+              setCounter(counter)
+            }
+            
+            return (
+              <div>
+                <h1>Counter Check</h1>
+                <h2>{counter}</h2>
+                 <button onClick={counterHandler}>Increment counter
+                  </button>
+              </div>
+              )
+           
+          } // end of HookComp
+          
+           myroot.render(<HookComp/>);
+
+    </script>
+
+</body>
+</html>
